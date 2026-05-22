@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://x23nays0f255"]
+
+[node name="World1" type="Node2D" unique_id=714297434]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=2042428415]
+
+[node name="Grass" type="TileMapLayer" parent="Background" unique_id=752302304]
+
+[node name="Farm" type="TileMapLayer" parent="Background" unique_id=209945489]
+
+[node name="Etc" type="TileMapLayer" parent="Background" unique_id=725609893]

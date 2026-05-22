@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://t5bnnxqup8rj"]
+
+[ext_resource type="PackedScene" uid="uid://cyflo467urc8o" path="res://entities/player/berries.tscn" id="1_ny0t1"]
+[ext_resource type="PackedScene" uid="uid://dmgg5ycge6gxe" path="res://entities/player/carrot.tscn" id="2_r4e4k"]
+[ext_resource type="PackedScene" uid="uid://dkre1gb63nx1l" path="res://entities/player/raddish.tscn" id="3_pnvjf"]
+
+[node name="Test" type="Node2D" unique_id=2028835779]
+
+[node name="berries" parent="." unique_id=385691077 instance=ExtResource("1_ny0t1")]
+position = Vector2(27, 54)
+
+[node name="carrot" parent="." unique_id=643919306 instance=ExtResource("2_r4e4k")]
+position = Vector2(187, 76)
+
+[node name="raddish" parent="." unique_id=202597556 instance=ExtResource("3_pnvjf")]
+position = Vector2(159, 171)

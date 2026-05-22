@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bfvjk76oepn67"]
+
+[ext_resource type="Script" uid="uid://dhk5pigubtoc1" path="res://ui/upgrade_prompt.gd" id="1_xkocg"]
+
+[node name="UpgradePrompt" type="CanvasLayer" unique_id=699544175]
+script = ExtResource("1_xkocg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=131485525]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=49474880]
+layout_mode = 2

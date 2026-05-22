@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dgbbkx0jm06jn"]
+
+[ext_resource type="PackedScene" uid="uid://biqbschl4tpdf" path="res://entities/player/base_crop.tscn" id="1_eilno"]
+[ext_resource type="Texture2D" uid="uid://bf6xl1e020w2q" path="res://entities/player/wheat_full.png" id="2_uwr16"]
+[ext_resource type="Texture2D" uid="uid://cftc8vv58ghn1" path="res://entities/player/wheat.png" id="2_xm11l"]
+
+[node name="wheat" unique_id=385691077 instance=ExtResource("1_eilno")]
+upgrade_crop_image = ExtResource("2_uwr16")
+
+[node name="CropSprite" parent="." index="0" unique_id=7190002]
+texture = ExtResource("2_xm11l")

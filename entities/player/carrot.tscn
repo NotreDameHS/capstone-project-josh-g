@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dmgg5ycge6gxe"]
+
+[ext_resource type="PackedScene" uid="uid://biqbschl4tpdf" path="res://entities/player/base_crop.tscn" id="1_rx0nv"]
+[ext_resource type="Texture2D" uid="uid://bxjpsyune4rwx" path="res://entities/player/carrot_full.png" id="2_elos6"]
+[ext_resource type="Texture2D" uid="uid://bw5wx0bhvsqh1" path="res://entities/player/carrot.png" id="2_ndepl"]
+
+[node name="carrot" unique_id=385691077 instance=ExtResource("1_rx0nv")]
+upgrade_crop_image = ExtResource("2_elos6")
+
+[node name="Sprite2D" parent="." index="0" unique_id=7190002]
+texture = ExtResource("2_ndepl")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxi4r6ta0sk4g"]
+
+[ext_resource type="Script" uid="uid://fvxexs5f1b5l" path="res://ui/game_end_screen.gd" id="1_ymspo"]
+
+[node name="GameEndScreen" type="CanvasLayer" unique_id=956829872]
+script = ExtResource("1_ymspo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=454995903]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2015137298]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=205051116]
+layout_mode = 2

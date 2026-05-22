@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://biqbschl4tpdf"]
+
+[ext_resource type="Script" uid="uid://cdo4xsc6pivk5" path="res://entities/player/base_crop.gd" id="1_lk3g7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lk3g7"]
+
+[node name="Crop" type="Node2D" unique_id=385691077]
+script = ExtResource("1_lk3g7")
+
+[node name="CropSprite" type="Sprite2D" parent="." unique_id=7190002]
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1961090159]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1604013283]
+shape = SubResource("CircleShape2D_lk3g7")
+
+[node name="Timer" type="Timer" parent="." unique_id=23242239]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1196124399]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

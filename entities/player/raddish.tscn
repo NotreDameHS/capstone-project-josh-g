@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dkre1gb63nx1l"]
+
+[ext_resource type="PackedScene" uid="uid://biqbschl4tpdf" path="res://entities/player/base_crop.tscn" id="1_0uinm"]
+[ext_resource type="Texture2D" uid="uid://bqyed66njyfr0" path="res://entities/player/raddish_full.png" id="2_dyye1"]
+[ext_resource type="Texture2D" uid="uid://b8i3id207v164" path="res://entities/player/raddish.png" id="2_lqhb8"]
+
+[node name="raddish" unique_id=385691077 instance=ExtResource("1_0uinm")]
+upgrade_crop_image = ExtResource("2_dyye1")
+
+[node name="Sprite2D" parent="." index="0" unique_id=7190002]
+texture = ExtResource("2_lqhb8")
