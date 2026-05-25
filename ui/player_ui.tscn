@@ -8,3 +8,80 @@ script = ExtResource("1_cfom6")
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2037581008]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1865158056]
+layout_mode = 2
+
+[node name="MoneyPanel" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=1763580807]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/HBoxContainer/MoneyPanel" unique_id=512288774]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1496561751]
+layout_mode = 2
+
+[node name="ShopPanel" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1124209366]
+layout_mode = 2
+
+[node name="Crop1" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShopPanel" unique_id=756189037]
+layout_mode = 2
+
+[node name="StdTurretBtn" type="Button" parent="MarginContainer/HBoxContainer/ShopPanel/Crop1" unique_id=1944847809]
+layout_mode = 2
+
+[node name="StdTurretPrice" type="Label" parent="MarginContainer/HBoxContainer/ShopPanel/Crop1" unique_id=1288102561]
+layout_mode = 2
+
+[node name="Crop2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShopPanel" unique_id=1569172771]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/ShopPanel/Crop2" unique_id=1281103435]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShopPanel/Crop2" unique_id=37820335]
+layout_mode = 2
+
+[node name="Crop3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShopPanel" unique_id=1052170974]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/ShopPanel/Crop3" unique_id=702437196]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShopPanel/Crop3" unique_id=1705699720]
+layout_mode = 2
+
+[node name="Crop4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShopPanel" unique_id=1058840511]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/ShopPanel/Crop4" unique_id=1619791522]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShopPanel/Crop4" unique_id=135060984]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer" unique_id=469841308]
+layout_mode = 2
+
+[node name="BottomMargin" type="MarginContainer" parent="." unique_id=1099903948]
+offset_top = 990.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomMargin" unique_id=1554754925]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="BottomMargin/HBoxContainer" unique_id=1786073817]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="BottomMargin/HBoxContainer" unique_id=1904805537]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Pause"

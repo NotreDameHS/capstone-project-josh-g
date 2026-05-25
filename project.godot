@@ -14,6 +14,10 @@ config/name="Capstone Game"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://pgfpip4rfuiy"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
