@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fyot82cuy8k0"]
+
+[ext_resource type="Script" uid="uid://ds4otgtipddjl" path="res://entities/spawn/random_collectible_spawn.gd" id="1_2xe23"]
+
+[node name="RandomCollectibleSpawn" type="Node2D" unique_id=1255645498]
+script = ExtResource("1_2xe23")
+
+[node name="Timer" type="Timer" parent="." unique_id=395313400]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

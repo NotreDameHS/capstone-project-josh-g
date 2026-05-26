@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8i3id207v164"
-path="res://.godot/imported/raddish.png-995c40bc3ac5499c42dd15fabd7ec326.ctex"
+uid="uid://bpj3fqpqimpu7"
+path="res://.godot/imported/spaceShips_001.png-d019fe7acf266f3ca6eb51ba8db200ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/player/raddish.png"
-dest_files=["res://.godot/imported/raddish.png-995c40bc3ac5499c42dd15fabd7ec326.ctex"]
+source_file="res://entities/player/spaceShips_001.png"
+dest_files=["res://.godot/imported/spaceShips_001.png-d019fe7acf266f3ca6eb51ba8db200ca.ctex"]
 
 [params]
 

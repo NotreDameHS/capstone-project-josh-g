@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dmgg5ycge6gxe"]
 
-[ext_resource type="PackedScene" uid="uid://biqbschl4tpdf" path="res://entities/player/base_crop.tscn" id="1_rx0nv"]
-[ext_resource type="Texture2D" uid="uid://bxjpsyune4rwx" path="res://entities/player/carrot_full.png" id="2_elos6"]
-[ext_resource type="Texture2D" uid="uid://bw5wx0bhvsqh1" path="res://entities/player/carrot.png" id="2_ndepl"]
+[ext_resource type="PackedScene" uid="uid://qtsp05nhewnu" path="res://entities/player/base_crop.tscn" id="1_rx0nv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rx0nv"]
+load_path = "res://.godot/imported/carrot_full.png-040a772967850285917ed3e1df799dda.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ndepl"]
+load_path = "res://.godot/imported/carrot.png-fe236a469cd5415e853a48ec32af4ef7.ctex"
 
 [node name="carrot" unique_id=385691077 instance=ExtResource("1_rx0nv")]
-upgrade_crop_image = ExtResource("2_elos6")
+upgrade_crop_image = SubResource("CompressedTexture2D_rx0nv")
 
-[node name="Sprite2D" parent="." index="0" unique_id=7190002]
-texture = ExtResource("2_ndepl")
+[node name="CropSprite" parent="." index="0" unique_id=7190002]
+texture = SubResource("CompressedTexture2D_ndepl")

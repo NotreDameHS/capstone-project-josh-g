@@ -1,11 +1,50 @@
-[gd_scene format=3 uid="uid://biqbschl4tpdf"]
+[gd_scene format=3 uid="uid://qtsp05nhewnu"]
 
-[ext_resource type="Script" uid="uid://cdo4xsc6pivk5" path="res://entities/player/base_crop.gd" id="1_lk3g7"]
+[sub_resource type="GDScript" id="GDScript_k6dju"]
+script/source = "class_name Crop extends Node2D
+@export var crop_detection_range := 100.0
+@onready var detection_range = $DetectionArea/CollisionShape2D
+@onready var detection_area = $DetectionArea
+@onready var spawn_point = $Marker2D
+@onready var timer = $Timer
+@onready var crop_sprite: Sprite2D = $CropSprite
+@export var upgrade_crop_image: CompressedTexture2D
+@export var upgrade_price: float = 75.0
+@export var is_upgraded: bool = false
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print(detection_range.shape.radius)
+	detection_range.shape = detection_range.shape.duplicate()
+	detection_range.shape.radius = crop_detection_range
+	print(detection_range.shape.radius)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func get_upgrade_price() -> float:
+	return upgrade_price
+	
+func apply_upgrade() -> void:
+	is_upgraded = true
+	
+	crop_sprite.texture = upgrade_crop_image
+	
+	print(\"Crop successfully upgraded!\")
+
+func _on_timer_timeout() -> void:
+	pass
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lk3g7"]
 
 [node name="Crop" type="Node2D" unique_id=385691077]
-script = ExtResource("1_lk3g7")
+script = SubResource("GDScript_k6dju")
 
 [node name="CropSprite" type="Sprite2D" parent="." unique_id=7190002]
 

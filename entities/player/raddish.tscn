@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dkre1gb63nx1l"]
 
-[ext_resource type="PackedScene" uid="uid://biqbschl4tpdf" path="res://entities/player/base_crop.tscn" id="1_0uinm"]
-[ext_resource type="Texture2D" uid="uid://bqyed66njyfr0" path="res://entities/player/raddish_full.png" id="2_dyye1"]
-[ext_resource type="Texture2D" uid="uid://b8i3id207v164" path="res://entities/player/raddish.png" id="2_lqhb8"]
+[ext_resource type="PackedScene" uid="uid://qtsp05nhewnu" path="res://entities/player/base_crop.tscn" id="1_0uinm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0uinm"]
+load_path = "res://.godot/imported/raddish_full.png-5a5d426179f96c32f4c78042e0d67a80.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lqhb8"]
+load_path = "res://.godot/imported/raddish.png-995c40bc3ac5499c42dd15fabd7ec326.ctex"
 
 [node name="raddish" unique_id=385691077 instance=ExtResource("1_0uinm")]
-upgrade_crop_image = ExtResource("2_dyye1")
+upgrade_crop_image = SubResource("CompressedTexture2D_0uinm")
 
-[node name="Sprite2D" parent="." index="0" unique_id=7190002]
-texture = ExtResource("2_lqhb8")
+[node name="CropSprite" parent="." index="0" unique_id=7190002]
+texture = SubResource("CompressedTexture2D_lqhb8")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnw7b30mch2yh"]
+
+[node name="Health_Power_Up" type="Area2D" unique_id=462393670]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857693803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1644943593]

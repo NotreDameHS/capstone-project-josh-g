@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://bfvjk76oepn67"]
 
-[ext_resource type="Script" uid="uid://dhk5pigubtoc1" path="res://ui/upgrade_prompt.gd" id="1_xkocg"]
+[sub_resource type="GDScript" id="GDScript_t706r"]
+script/source = "extends CanvasLayer
+		
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+		
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="UpgradePrompt" type="CanvasLayer" unique_id=699544175]
-script = ExtResource("1_xkocg")
+script = SubResource("GDScript_t706r")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=131485525]
 offset_right = 40.0
