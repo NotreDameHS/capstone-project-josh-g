@@ -24,10 +24,5 @@ func play_floating_animation() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_area_entered(area: Area2D) -> void:
-	
-	print("Health pack entered by:")
-	print(area)
 	queue_free()
-	pass # Replace with function body.

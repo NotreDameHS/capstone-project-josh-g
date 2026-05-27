@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://cnw7b30mch2yh"]
 
-[node name="Health_Power_Up" type="Area2D" unique_id=462393670]
+[ext_resource type="Script" uid="uid://tcwcikhbibc" path="res://entities/collectibles/collectible.gd" id="1_uncxf"]
+[ext_resource type="Texture2D" uid="uid://fmpknud0jage" path="res://assets/textures/health.png" id="2_d5crq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5crq"]
+radius = 13.038404
+
+[node name="Health_Power_Up" type="Area2D" unique_id=462393670 groups=["health_power_up"]]
 collision_layer = 2
+script = ExtResource("1_uncxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857693803]
+position = Vector2(0, 1.0000038)
+scale = Vector2(0.025390591, 0.025390612)
+texture = ExtResource("2_d5crq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1644943593]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_d5crq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

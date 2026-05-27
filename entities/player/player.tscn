@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bpj3fqpqimpu7" path="res://entities/player/spaceShips_001.png" id="2_abrql"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
-radius = 33.06055
+radius = 33.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abrql"]
 bg_color = Color(0.80391645, 0.41315296, 0, 1)

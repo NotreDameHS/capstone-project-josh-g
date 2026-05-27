@@ -1,8 +1,8 @@
 extends Node2D
 
 var item_scenes := [
-	preload("res://entities/collectibles/gold_star/gold_star.tscn"),
-	preload("res://entities/collectibles/health_pack/health_pack.tscn")
+	preload("res://entities/collectibles/health_power_up.tscn"),
+	preload("res://entities/collectibles/xp.tscn")
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,14 +12,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass	
-
-
-	
-	
-	
-	
-	pass # Replace with function body.
-
 
 func _on_timer_timeout() -> void:
 	var random_item_scene: PackedScene = item_scenes.pick_random()

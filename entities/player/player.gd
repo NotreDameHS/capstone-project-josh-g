@@ -50,8 +50,11 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 		
-	if area.is_in_group("healing_item"):
+	if area.is_in_group("health_power_up"):
 		set_health(health + 10)
+		
+	if area.is_in_group("XP"):
+		print("Placeholder")
 	
 
 

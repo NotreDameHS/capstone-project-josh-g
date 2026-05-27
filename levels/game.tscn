@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dxviuqcqgt7ei"]
+
+[ext_resource type="PackedScene" uid="uid://cdfmuw4b6hr4d" path="res://levels/background.tscn" id="1_748nt"]
+[ext_resource type="PackedScene" uid="uid://fyot82cuy8k0" path="res://entities/spawn/random_collectible_spawn.tscn" id="2_vhr6a"]
+[ext_resource type="PackedScene" uid="uid://cvlv22e1gn7ny" path="res://entities/player/player.tscn" id="3_30w35"]
+
+[node name="Game" type="Node2D" unique_id=26073523]
+
+[node name="Background" parent="." unique_id=61296946 instance=ExtResource("1_748nt")]
+position = Vector2(251.00006, 194.99994)
+scale = Vector2(0.43750897, 0.46538368)
+
+[node name="RandomCollectibleSpawn" parent="." unique_id=1255645498 instance=ExtResource("2_vhr6a")]
+position = Vector2(481, 289)
+
+[node name="Player" parent="." unique_id=299290232 instance=ExtResource("3_30w35")]
