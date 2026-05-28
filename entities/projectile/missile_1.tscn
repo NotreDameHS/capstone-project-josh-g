@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ds23d4ng6lunt"]
+
+[ext_resource type="PackedScene" uid="uid://e25i7xer2a3e" path="res://entities/projectile/base_missile.tscn" id="1_r3b30"]
+[ext_resource type="Texture2D" uid="uid://dj2v688wu453c" path="res://assets/textures/missile_1.png" id="2_gaa76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaa76"]
+size = Vector2(35, 12)
+
+[node name="Missile_1" unique_id=940995368 instance=ExtResource("1_r3b30")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1628659054]
+rotation = 1.5657624
+texture = ExtResource("2_gaa76")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=363397743]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_gaa76")

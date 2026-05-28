@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://e25i7xer2a3e"]
+
+[ext_resource type="Script" uid="uid://b7l1nh2dmt148" path="res://entities/projectile/base_missile.gd" id="1_jirt7"]
+
+[node name="Base_Missile" type="Area2D" unique_id=940995368]
+monitorable = false
+script = ExtResource("1_jirt7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628659054]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=363397743]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
