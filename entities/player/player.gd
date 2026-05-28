@@ -4,9 +4,20 @@ var velocity := Vector2(0, 0)
 var normal_speed := 600.0
 var boost_speed := 1500.0
 var max_speed := normal_speed
-var health := 10
+var health := 20
 var score := 0
-
+@export var mob_detection_range := 100.0
+@onready var detection_range = $DetectionArea/CollisionShape2D
+@onready var detection_area = $DetectionArea
+@export var attack_rate := 1.0
+@onready var timer = $Timer
+@export var projectile_scene: PackedScene
+@onready var spawn_point = $Marker2D
+@onready var turret_sprite: Sprite2D = $TurretSprite
+@export var upgrade_turret_image: CompressedTexture2D
+@export var upgrade_price: float = 75.0
+@export var upgrade_projectile_scene: PackedScene
+@export var is_upgraded: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func set_health(new_health: int) -> void:
@@ -47,6 +58,20 @@ func _process(delta: float) -> void:
 	var viewport_size := get_viewport_rect().size
 	position.x = wrapf(position.x, 0, viewport_size.x)
 	position.y = wrapf(position.y, 0, viewport_size.y)
+	
+	
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		#var mobs_in_range : Array = detection_area.get_overlapping_areas()
+		
+		var projectile = projectile_scene.instantiate()
+		
+		get_tree().current_scene.add_child(projectile)
+		
+		projectile.global_transform = spawn_point.global_transform
+		
+		
 
 func _on_area_entered(area: Area2D) -> void:
 		
@@ -55,7 +80,15 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("XP"):
 		print("Placeholder")
+		
+	if area.is_in_group("Objects"):
+		set_health(health - 10)
+		
+	if area.is_in_group("XP"):
+		pass
+		
 	
+
 
 
 
