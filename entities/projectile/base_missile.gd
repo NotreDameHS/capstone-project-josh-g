@@ -4,7 +4,8 @@ class_name Missile extends Area2D
 @export var speed := 300.0
 @export var damage := 25
 var _distance_traveled := 0.0
-
+var direction := Vector2.RIGHT
+	
 func _explode() -> void:
 	spawn_poof(global_position)
 	queue_free()
@@ -16,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position += transform.x * speed * delta
+	position += direction * speed * delta
 	_distance_traveled += speed * delta
 	
 	if _distance_traveled > max_distance:

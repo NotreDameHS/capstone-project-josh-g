@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qm8okoq3eikw"]
+
+[ext_resource type="Script" uid="uid://4iyrpxj4rjgh" path="res://entities/spawn/object_spawner.gd" id="1_jqgia"]
+[ext_resource type="PackedScene" uid="uid://8qpiw8p31362" path="res://entities/objects/asteroid_1.tscn" id="2_e5xwp"]
+[ext_resource type="PackedScene" uid="uid://ein3wu5cu87j" path="res://entities/objects/meteor_1.tscn" id="3_jibim"]
+
+[node name="Object Spawner" type="Node2D" unique_id=1941301036]
+script = ExtResource("1_jqgia")
+mob_types = Array[PackedScene]([ExtResource("2_e5xwp"), ExtResource("3_jibim")])
+
+[node name="Timer" type="Timer" parent="." unique_id=255180188]

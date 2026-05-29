@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d4mlydov7ow50" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://bpj3fqpqimpu7" path="res://entities/player/spaceShips_001.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://ds23d4ng6lunt" path="res://entities/projectile/missile_1.tscn" id="2_fkugw"]
-[ext_resource type="Texture2D" uid="uid://b5bwi3ohjunyw" path="res://assets/textures/missile_2.png" id="3_8fjmc"]
 [ext_resource type="PackedScene" uid="uid://cet8deg481ugg" path="res://entities/projectile/missile_upgrade.tscn" id="4_qiwj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
@@ -20,7 +19,6 @@ corner_radius_bottom_left = 4
 collision_mask = 2
 script = ExtResource("1_symyc")
 projectile_scene = ExtResource("2_fkugw")
-upgrade_turret_image = ExtResource("3_8fjmc")
 upgrade_projectile_scene = ExtResource("4_qiwj3")
 
 [node name="Timer" type="Timer" parent="." unique_id=1924821101]
@@ -30,6 +28,12 @@ position = Vector2(34, 27)
 rotation = -3.165008
 scale = Vector2(0.27249786, 0.27608177)
 texture = ExtResource("2_abrql")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D" unique_id=784420199]
+position = Vector2(99.22802, -4.9524918)
+rotation = -3.1184812
+scale = Vector2(3.6697273, 3.6221414)
+skew = 0.00061166286
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1068033488]
 position = Vector2(40, 28)
@@ -67,8 +71,5 @@ layout_mode = 0
 offset_left = 5.0
 offset_right = 45.0
 offset_bottom = 23.0
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=784420199]
-position = Vector2(7, 28)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

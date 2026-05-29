@@ -7,14 +7,11 @@ var max_speed := normal_speed
 var health := 20
 var score := 0
 @export var mob_detection_range := 100.0
-@onready var detection_range = $DetectionArea/CollisionShape2D
-@onready var detection_area = $DetectionArea
 @export var attack_rate := 1.0
 @onready var timer = $Timer
 @export var projectile_scene: PackedScene
-@onready var spawn_point = $Marker2D
-@onready var turret_sprite: Sprite2D = $TurretSprite
-@export var upgrade_turret_image: CompressedTexture2D
+@onready var spawn_point = $Sprite2D/Marker2D
+@export var upgrade_ship_image: CompressedTexture2D
 @export var upgrade_price: float = 75.0
 @export var upgrade_projectile_scene: PackedScene
 @export var is_upgraded: bool = false
@@ -71,7 +68,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		projectile.global_transform = spawn_point.global_transform
 		
+		projectile.rotation = $Sprite2D.rotation
 		
+		projectile.direction = Vector2.RIGHT.rotated($Sprite2D.rotation)
 
 func _on_area_entered(area: Area2D) -> void:
 		
@@ -81,15 +80,11 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("XP"):
 		print("Placeholder")
 		
-	if area.is_in_group("Objects"):
-		set_health(health - 10)
-		
-	if area.is_in_group("XP"):
-		pass
-		
-	
 
 
+func _player_take_damage() -> void:
+	set_health(health - 10)
+	print("Player takes damage!")
 
 
 
