@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cvlv22e1gn7ny" path="res://entities/player/player.tscn" id="3_30w35"]
 [ext_resource type="PackedScene" uid="uid://8qpiw8p31362" path="res://entities/objects/asteroid_1.tscn" id="4_30w35"]
 [ext_resource type="PackedScene" uid="uid://ein3wu5cu87j" path="res://entities/objects/meteor_1.tscn" id="5_cnc74"]
+[ext_resource type="PackedScene" uid="uid://qm8okoq3eikw" path="res://entities/spawn/object_spawner.tscn" id="6_cnc74"]
 
 [node name="Game" type="Node2D" unique_id=26073523]
 
@@ -13,12 +14,15 @@ position = Vector2(251.00006, 194.99994)
 scale = Vector2(0.43750897, 0.46538368)
 
 [node name="RandomCollectibleSpawn" parent="." unique_id=1255645498 instance=ExtResource("2_vhr6a")]
-position = Vector2(481, 289)
+position = Vector2(-1, -2)
 
 [node name="Player" parent="." unique_id=299290232 instance=ExtResource("3_30w35")]
+position = Vector2(1, 15)
 
 [node name="asteroid_1" parent="." unique_id=2144749362 instance=ExtResource("4_30w35")]
 position = Vector2(269, 492)
 
 [node name="Meteor_1" parent="." unique_id=244303717 instance=ExtResource("5_cnc74")]
 position = Vector2(750, 287)
+
+[node name="Object Spawner" parent="." unique_id=1941301036 instance=ExtResource("6_cnc74")]

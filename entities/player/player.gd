@@ -85,6 +85,9 @@ func _on_area_entered(area: Area2D) -> void:
 func _player_take_damage() -> void:
 	set_health(health - 10)
 	print("Player takes damage!")
+	
+	if health <= 0:
+		GameManager.show_end_screen("Game Over")
 
 
 

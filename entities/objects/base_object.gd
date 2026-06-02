@@ -1,7 +1,6 @@
 class_name Objects extends Area2D
 
 @export var speed := 100.0
-@onready var ui_node = $UI
 
 func _take_damage() -> void: 
 	#GameManager.give_xp(10.0)
@@ -61,8 +60,10 @@ func spawn_poof(projectile_position: Vector2):
 	timer.timeout.connect(particles.queue_free)
 	
 func _on_area_entered(area: Area2D) -> void:
-	area._player_take_damage()
-	spawn_poof(global_position)
-	queue_free()
+	
+	if area.is_in_group("player"):
+		area._player_take_damage()
+		spawn_poof(global_position)
+		queue_free()
 	
 	

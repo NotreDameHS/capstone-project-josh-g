@@ -6,6 +6,8 @@
 
 [node name="Object Spawner" type="Node2D" unique_id=1941301036]
 script = ExtResource("1_jqgia")
-mob_types = Array[PackedScene]([ExtResource("2_e5xwp"), ExtResource("3_jibim")])
+object_types = Array[PackedScene]([ExtResource("2_e5xwp"), ExtResource("3_jibim")])
 
 [node name="Timer" type="Timer" parent="." unique_id=255180188]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -15,7 +15,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="Player" type="Area2D" unique_id=299290232]
+[node name="Player" type="Area2D" unique_id=299290232 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_symyc")
 projectile_scene = ExtResource("2_fkugw")
