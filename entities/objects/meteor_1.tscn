@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cxm8ibkabm4oa" path="res://assets/textures/spaceMeteors_001.png" id="2_vc3wp"]
 
 [node name="Meteor_1" unique_id=2144749362 instance=ExtResource("1_lndka")]
+speed = 500.0
+max_health = 75
 
-[node name="Sprite2D" parent="." index="0" unique_id=257407265]
+[node name="Sprite2D" parent="." index="1" unique_id=257407265]
 position = Vector2(3.8146973e-06, -0.5000019)
 scale = Vector2(0.35348842, 0.3554502)
 texture = ExtResource("2_vc3wp")

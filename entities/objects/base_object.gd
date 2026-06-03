@@ -1,14 +1,34 @@
 class_name Objects extends Area2D
 
-@export var speed := 100.0
+@export var speed := 300.0
+@export var max_distance := 900.0
+@export var max_health := 100
+@export var health := max_health
+@onready var health_bar = $UI/HealthBar
+var _distance_traveled := 0.0
+var direction := Vector2.RIGHT
 
-func _take_damage() -> void: 
-	#GameManager.give_xp(10.0)
-	queue_free()
+func _take_damage(amount: float) -> void: 
+	var tbd : float = health_bar.value
+	
+	var new : float = tbd - amount
+	
+	if new == 0:
+		health_bar.value = 0
+		queue_free()
+	
+	elif new > 0:
+		health_bar.value = new
+		
+	if health <= 0:
+		queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("Objects")
+	health = max_health
+	health_bar.max_value = max_health
+	health_bar.value = health
 
 	
 	pass # Replace with function body.
@@ -18,7 +38,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	pass
+	position += transform.y * speed * delta
+	_distance_traveled += speed * delta
+	
+	if _distance_traveled > max_distance:
+		queue_free()
 
 func spawn_poof(projectile_position: Vector2):
 	var particles = CPUParticles2D.new()

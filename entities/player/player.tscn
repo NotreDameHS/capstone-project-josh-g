@@ -25,7 +25,7 @@ upgrade_projectile_scene = ExtResource("4_qiwj3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126419706]
 position = Vector2(34, 27)
-rotation = -3.165008
+rotation = -1.5694823
 scale = Vector2(0.27249786, 0.27608177)
 texture = ExtResource("2_abrql")
 
@@ -36,7 +36,7 @@ scale = Vector2(3.6697273, 3.6221414)
 skew = 0.00061166286
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1068033488]
-position = Vector2(40, 28)
+position = Vector2(34, 31)
 shape = SubResource("CircleShape2D_sglur")
 
 [node name="UI" type="Control" parent="." unique_id=852973704]

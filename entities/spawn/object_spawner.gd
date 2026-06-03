@@ -1,16 +1,11 @@
 extends Node2D
 
 @export var object_types: Array[PackedScene]
-@export var objects_per_wave: int = 3
+@export var objects_per_wave: int = 15
 @export var spawn_delay: float = 0.5
 @export var wave_delay: float = 10.0
-@export var total_waves: int = 7
 
-@export var max_distance := 900.0
-@export var speed := 300.0
 @export var damage := 25
-var _distance_traveled := 0.0
-var direction := Vector2.RIGHT
 @onready var timer: Timer = $Timer
 var current_wave: int = 0
 var spawned_in_wave: int = 0
@@ -38,7 +33,7 @@ func spawn_mob():
 	
 	var random_position := Vector2(0.0, 0.0)
 	random_position.x = randf_range(0.0, viewport_size.x)
-	random_position.y = randf_range(0.0, viewport_size.y)
+	random_position.y = randf_range(viewport_size.y - 800, viewport_size.y - 800)
 	
 	new_object.position = random_position
 	

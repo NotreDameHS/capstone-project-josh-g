@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bsciqp0p0m2vb" path="res://assets/textures/spaceEffects_017.png" id="2_2ek8u"]
 
 [node name="asteroid_1" unique_id=2144749362 instance=ExtResource("1_ohj8g")]
-speed = 125.0
+speed = 400.0
+max_health = 50
 
-[node name="Sprite2D" parent="." index="0" unique_id=257407265]
+[node name="Sprite2D" parent="." index="1" unique_id=257407265]
 position = Vector2(3.500001, -1.5)
 scale = Vector2(1.0579709, 1.084507)
 texture = ExtResource("2_2ek8u")

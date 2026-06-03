@@ -2,11 +2,41 @@
 
 [ext_resource type="Script" uid="uid://1dmjk5f5mj2a" path="res://entities/objects/base_object.gd" id="1_4l75w"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l75w"]
+bg_color = Color(0.6, 0, 0, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwv3r"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4l75w"]
 radius = 42.047592
 
 [node name="Base Object" type="Area2D" unique_id=2144749362]
 script = ExtResource("1_4l75w")
+
+[node name="UI" type="Control" parent="." unique_id=1849528196]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="UI" unique_id=101751512]
+layout_mode = 0
+offset_left = -39.0
+offset_top = -51.0
+offset_right = 40.0
+offset_bottom = -45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4l75w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jwv3r")
+show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=257407265]
 
