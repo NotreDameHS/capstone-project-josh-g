@@ -10,6 +10,10 @@ extends Node2D
 var current_wave: int = 0
 var spawned_in_wave: int = 0
 
+func increase_strength(area1: Area2D, area2: Area2D):
+	area1.strengthen()
+	area2.strengthen()
+	
 func start_new_wave():
 	current_wave += 1
 	print("Starting Wave: ", current_wave)

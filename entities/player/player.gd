@@ -2,15 +2,15 @@ extends Area2D
 
 var velocity := Vector2(0, 0)
 var normal_speed := 600.0
-var boost_speed := 1500.0
 var max_speed := normal_speed
 var health := 20
-var score := 0
+var xp_level := 1
+var player_xp := 0
 @export var mob_detection_range := 100.0
-@export var attack_rate := 1.0
 @onready var timer = $Timer
 @export var projectile_scene: PackedScene
 @onready var spawn_point = $Sprite2D/Marker2D
+@onready var ship_image: Sprite2D = $Sprite2D
 @export var upgrade_ship_image: CompressedTexture2D
 @export var upgrade_price: float = 75.0
 @export var upgrade_projectile_scene: PackedScene
@@ -21,9 +21,13 @@ func set_health(new_health: int) -> void:
 	health = new_health
 	get_node("UI/HealthBar").value = health
 	
+func set_xp(new_xp: int) -> void:
+	player_xp = new_xp
+	
 	
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	set_xp(player_xp)
 	set_health(health)
 	
 	 # Replace with function body.
@@ -77,18 +81,37 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("health_power_up"):
 		set_health(health + 10)
+		print("Player gained 10 health!")
 		
 	if area.is_in_group("XP"):
-		print("Placeholder")
+		set_xp(player_xp + 10)
+		print("Player gained 10 XP! ", player_xp)
+		GameManager.check_upgrade(player_xp, self)
 		
 
-
-func _player_take_damage() -> void:
-	set_health(health - 10)
-	print("Player takes damage!")
+func apply_upgrade() -> void:
+	
+	ship_image.texture = upgrade_ship_image
+	
+	projectile_scene = upgrade_projectile_scene
+	
+	set_xp(0)
+	
+	normal_speed += 50
+	
+	xp_level += 1
+	
+	print("Player has reached new XP level! (new level: ", xp_level, ", new speed: ", normal_speed, ")")
+	
+	
+	
+func _player_take_damage(damage: float) -> void:
+	set_health(health - damage)
+	print("Player takes damage!", damage)
 	
 	if health <= 0:
-		GameManager.show_end_screen("Game Over")
+		GameManager.show_end_screen("Game Over!")
+		print("FINAL XP LEVEL: ", xp_level)
 
 
 

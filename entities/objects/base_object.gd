@@ -4,10 +4,17 @@ class_name Objects extends Area2D
 @export var max_distance := 900.0
 @export var max_health := 100
 @export var health := max_health
+@export var damage := 25
 @onready var health_bar = $UI/HealthBar
 var _distance_traveled := 0.0
 var direction := Vector2.RIGHT
 
+func strengthen():
+	speed += 10
+	max_health += 10
+	damage += 10
+	
+	
 func _take_damage(amount: float) -> void: 
 	var tbd : float = health_bar.value
 	
@@ -86,7 +93,7 @@ func spawn_poof(projectile_position: Vector2):
 func _on_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("player"):
-		area._player_take_damage()
+		area._player_take_damage(damage)
 		spawn_poof(global_position)
 		queue_free()
 	

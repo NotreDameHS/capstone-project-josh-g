@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d4mlydov7ow50" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://bpj3fqpqimpu7" path="res://entities/player/spaceShips_001.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://ds23d4ng6lunt" path="res://entities/projectile/missile_1.tscn" id="2_fkugw"]
+[ext_resource type="Texture2D" uid="uid://cgfwto3pry4md" path="res://entities/player/spaceShips_002.png" id="3_fkugw"]
 [ext_resource type="PackedScene" uid="uid://cet8deg481ugg" path="res://entities/projectile/missile_upgrade.tscn" id="4_qiwj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
@@ -19,6 +20,7 @@ corner_radius_bottom_left = 4
 collision_mask = 2
 script = ExtResource("1_symyc")
 projectile_scene = ExtResource("2_fkugw")
+upgrade_ship_image = ExtResource("3_fkugw")
 upgrade_projectile_scene = ExtResource("4_qiwj3")
 
 [node name="Timer" type="Timer" parent="." unique_id=1924821101]

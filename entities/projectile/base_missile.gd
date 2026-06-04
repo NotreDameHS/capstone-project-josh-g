@@ -36,7 +36,6 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area is Objects:
 		area._take_damage(damage)
-		print(area, " is taking ", damage, " damage!")
 		_explode()
 		
 func spawn_poof(projectile_position: Vector2):
