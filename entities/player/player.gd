@@ -23,7 +23,10 @@ func set_health(new_health: int) -> void:
 	
 func set_xp(new_xp: int) -> void:
 	player_xp = new_xp
+	GameManager.check_upgrade(player_xp, self)
 	
+func get_xp():
+	return player_xp
 	
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
@@ -50,13 +53,7 @@ func _process(delta: float) -> void:
 	
 	velocity += steering_vector * steering_factor * delta
 	position += velocity * delta
-	
-	#if direction.length() > 0.0:
-		#get_node("Sprite2D").rotation = velocity.angle()
-	
-	#if velocity.length() > 0.0:
-		#get_node("Sprite2D").rotation = velocity.angle()
-		
+
 	var viewport_size := get_viewport_rect().size
 	position.x = clamp(position.x, 0, viewport_size.x - 20)
 	position.y = clamp(position.y, 0, viewport_size.y - 20)
@@ -81,11 +78,11 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("health_power_up"):
 		set_health(health + 10)
-		print("Player gained 10 health!")
+		print("Player gained 10 health! (current health: ", health, ")")
 		
 	if area.is_in_group("XP"):
 		set_xp(player_xp + 10)
-		print("Player gained 10 XP! ", player_xp)
+		print("Player gained 10 XP! (current XP: ", player_xp, ", current XP level: ", xp_level, ")")
 		GameManager.check_upgrade(player_xp, self)
 		
 
@@ -107,7 +104,7 @@ func apply_upgrade() -> void:
 	
 func _player_take_damage(damage: float) -> void:
 	set_health(health - damage)
-	print("Player takes damage!", damage)
+	print("Player takes ", damage, " damage! (current health: ", health, ")")
 	
 	if health <= 0:
 		GameManager.show_end_screen("Game Over!")

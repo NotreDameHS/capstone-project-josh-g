@@ -22,7 +22,16 @@ func check_upgrade(current_xp: int, area: Area2D):
 func _ready() -> void:
 	xp_changed.emit(player_xp)
 	pass # Replace with function body.
-		
+
+func increase_strength(area1: Area2D):
+	area1.strengthen()
+
+func reward_hit(area: Area2D):
+	var current = area.get_xp()
+	var new = current + 10
+	area.set_xp(new)
+	print("Succesfully shot down object! (+10 XP, current xp: ", new, ")")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

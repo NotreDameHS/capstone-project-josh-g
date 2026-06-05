@@ -1,18 +1,18 @@
 class_name Objects extends Area2D
 
-@export var speed := 300.0
+@export var speed := 290.0
 @export var max_distance := 900.0
-@export var max_health := 100
+@export var max_health := 90
 @export var health := max_health
-@export var damage := 25
+@export var damage := 15
 @onready var health_bar = $UI/HealthBar
 var _distance_traveled := 0.0
 var direction := Vector2.RIGHT
 
 func strengthen():
-	speed += 10
-	max_health += 10
-	damage += 10
+	speed += 15
+	max_health += 5
+	damage += 2
 	
 	
 func _take_damage(amount: float) -> void: 
@@ -23,12 +23,16 @@ func _take_damage(amount: float) -> void:
 	if new == 0:
 		health_bar.value = 0
 		queue_free()
+		var user = get_tree().get_first_node_in_group("player")
+		GameManager.reward_hit(user)
 	
 	elif new > 0:
 		health_bar.value = new
 		
 	if health <= 0:
 		queue_free()
+		var user = get_tree().get_first_node_in_group("player")
+		GameManager.reward_hit(user)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
