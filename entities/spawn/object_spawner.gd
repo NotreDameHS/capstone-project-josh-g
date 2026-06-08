@@ -60,6 +60,9 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func prepare_next_wave():
+	var user = get_tree().get_first_node_in_group("player")
+	GameManager.reward_survive(user)
+	print("You survived wave ", current_wave, "! (+10 XP) Next wave incoming...")
 	await get_tree().create_timer(wave_delay).timeout
 	start_new_wave()
 

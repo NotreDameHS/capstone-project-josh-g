@@ -10,26 +10,25 @@ var _distance_traveled := 0.0
 var direction := Vector2.RIGHT
 
 func strengthen():
-	speed += 15
-	max_health += 5
-	damage += 2
+	speed += 30
+	max_health += 10
+	damage += 10
 	
 	
-func _take_damage(amount: float) -> void: 
-	var tbd : float = health_bar.value
+func _take_damage(amount: int) -> void: 
+	health -= amount
 	
-	var new : float = tbd - amount
-	
-	if new == 0:
+	if health == 0:
 		health_bar.value = 0
 		queue_free()
 		var user = get_tree().get_first_node_in_group("player")
 		GameManager.reward_hit(user)
 	
-	elif new > 0:
-		health_bar.value = new
+	elif health > 0:
+		health_bar.value = health
 		
 	if health <= 0:
+		health_bar.value = 0
 		queue_free()
 		var user = get_tree().get_first_node_in_group("player")
 		GameManager.reward_hit(user)

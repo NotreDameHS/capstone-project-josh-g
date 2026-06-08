@@ -6,6 +6,7 @@ var max_speed := normal_speed
 var health := 20
 var xp_level := 1
 var player_xp := 0
+var delay := 1
 @export var mob_detection_range := 100.0
 @onready var timer = $Timer
 @export var projectile_scene: PackedScene
@@ -94,15 +95,13 @@ func apply_upgrade() -> void:
 	
 	set_xp(0)
 	
-	normal_speed += 50
+	normal_speed += 25
 	
 	xp_level += 1
 	
 	print("Player has reached new XP level! (new level: ", xp_level, ", new speed: ", normal_speed, ")")
 	
-	
-	
-func _player_take_damage(damage: float) -> void:
+func _player_take_damage(damage: int) -> void:
 	set_health(health - damage)
 	print("Player takes ", damage, " damage! (current health: ", health, ")")
 	

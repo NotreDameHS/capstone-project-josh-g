@@ -5,7 +5,7 @@
 
 [node name="asteroid_1" unique_id=2144749362 instance=ExtResource("1_ohj8g")]
 speed = 390.0
-max_health = 40
+max_health = 70
 damage = 10
 
 [node name="Sprite2D" parent="." index="1" unique_id=257407265]

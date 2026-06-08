@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s512p"]
 size = Vector2(47.533905, 24.295261)
 
-[node name="Missile_Upgrade" unique_id=940995368 instance=ExtResource("1_upywb")]
+[node name="Missile_Upgrade" unique_id=940995368 groups=["missile"] instance=ExtResource("1_upywb")]
 speed = 500.0
 damage = 30
 

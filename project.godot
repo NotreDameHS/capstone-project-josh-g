@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://pgfpip4rfuiy"
 
+[global_group]
+
+missile=""
+
 [input]
 
 move_up={
