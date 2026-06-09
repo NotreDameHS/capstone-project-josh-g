@@ -11,8 +11,8 @@ var direction := Vector2.RIGHT
 
 func strengthen():
 	speed += 30
-	max_health += 10
-	damage += 10
+	max_health += 5
+	damage += 5
 	
 	
 func _take_damage(amount: int) -> void: 

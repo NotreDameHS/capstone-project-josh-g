@@ -10,8 +10,9 @@ func _explode() -> void:
 	spawn_poof(global_position)
 	queue_free()
 	
-func die() -> void:
-	queue_free()
+func upgrade_missile():
+	speed += 10
+	damage += 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

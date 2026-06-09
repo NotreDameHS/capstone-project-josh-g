@@ -8,6 +8,7 @@ size = Vector2(35, 12)
 
 [node name="Missile_1" unique_id=940995368 groups=["missile"] instance=ExtResource("1_r3b30")]
 speed = 600.0
+damage = 30
 
 [node name="Sprite2D" parent="." index="0" unique_id=1628659054]
 rotation = 1.5657624

@@ -24,6 +24,7 @@ upgrade_ship_image = ExtResource("3_fkugw")
 upgrade_projectile_scene = ExtResource("4_qiwj3")
 
 [node name="Timer" type="Timer" parent="." unique_id=1924821101]
+wait_time = 0.404
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126419706]
 position = Vector2(34, 27)

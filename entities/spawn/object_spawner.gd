@@ -2,7 +2,7 @@ extends Node2D
 
 @export var object_types: Array[PackedScene]
 @export var objects_per_wave: int = 15
-@export var spawn_delay: float = 0.5
+@export var spawn_delay: float = 0.25
 @export var wave_delay: float = 10.0
 
 @export var damage := 25
@@ -62,8 +62,8 @@ func _physics_process(delta: float) -> void:
 func prepare_next_wave():
 	var user = get_tree().get_first_node_in_group("player")
 	GameManager.reward_survive(user)
-	print("You survived wave ", current_wave, "! (+10 XP) Next wave incoming...")
 	await get_tree().create_timer(wave_delay).timeout
+	print("You survived wave ", current_wave, "! (+10 XP) Next wave incoming...")
 	start_new_wave()
 
 func _on_timer_timeout() -> void:

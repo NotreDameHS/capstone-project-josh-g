@@ -3,10 +3,11 @@ extends Area2D
 var velocity := Vector2(0, 0)
 var normal_speed := 600.0
 var max_speed := normal_speed
-var health := 20
+var health := 40
 var xp_level := 1
 var player_xp := 0
 var delay := 1
+var number_of_upgrades = 0
 @export var mob_detection_range := 100.0
 @onready var timer = $Timer
 @export var projectile_scene: PackedScene
@@ -15,7 +16,7 @@ var delay := 1
 @export var upgrade_ship_image: CompressedTexture2D
 @export var upgrade_price: float = 75.0
 @export var upgrade_projectile_scene: PackedScene
-@export var is_upgraded: bool = false
+var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
 func set_health(new_health: int) -> void:
@@ -65,15 +66,28 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		#var mobs_in_range : Array = detection_area.get_overlapping_areas()
 		
-		var projectile = projectile_scene.instantiate()
-		
-		get_tree().current_scene.add_child(projectile)
-		
-		projectile.global_transform = spawn_point.global_transform
-		
-		projectile.rotation = $Sprite2D.rotation
-		
-		projectile.direction = Vector2.RIGHT.rotated($Sprite2D.rotation)
+		if can_shoot == true:
+			
+			can_shoot = false
+			
+			get_node("Timer").start()
+			
+			var projectile = projectile_scene.instantiate()
+			
+			var counter = 0
+			
+			if number_of_upgrades > 0:
+				while counter < number_of_upgrades:
+					projectile.upgrade_missile()
+					counter += 1
+			
+			get_tree().current_scene.add_child(projectile)
+			
+			projectile.global_transform = spawn_point.global_transform
+			
+			projectile.rotation = $Sprite2D.rotation
+			
+			projectile.direction = Vector2.RIGHT.rotated($Sprite2D.rotation)
 
 func _on_area_entered(area: Area2D) -> void:
 		
@@ -82,8 +96,8 @@ func _on_area_entered(area: Area2D) -> void:
 		print("Player gained 10 health! (current health: ", health, ")")
 		
 	if area.is_in_group("XP"):
-		set_xp(player_xp + 10)
 		print("Player gained 10 XP! (current XP: ", player_xp, ", current XP level: ", xp_level, ")")
+		set_xp(player_xp + 10)
 		GameManager.check_upgrade(player_xp, self)
 		
 
@@ -99,7 +113,9 @@ func apply_upgrade() -> void:
 	
 	xp_level += 1
 	
-	print("Player has reached new XP level! (new level: ", xp_level, ", new speed: ", normal_speed, ")")
+	number_of_upgrades += 1
+	
+	print("Player has reached new XP level! (new level: ", xp_level, ", new speed: ", normal_speed, ") (missile damage & speed +10!)")
 	
 func _player_take_damage(damage: int) -> void:
 	set_health(health - damage)
@@ -112,4 +128,5 @@ func _player_take_damage(damage: int) -> void:
 
 
 func _on_timer_timeout() -> void:
+	can_shoot = true
 	pass

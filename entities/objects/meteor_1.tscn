@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cxm8ibkabm4oa" path="res://assets/textures/spaceMeteors_001.png" id="2_vc3wp"]
 
 [node name="Meteor_1" unique_id=2144749362 instance=ExtResource("1_lndka")]
-speed = 490.0
+speed = 540.0
 max_health = 60
 
 [node name="Sprite2D" parent="." index="1" unique_id=257407265]
-position = Vector2(3.8146973e-06, -0.5000019)
-scale = Vector2(0.35348842, 0.3554502)
+position = Vector2(2.4999983, -11.500004)
+scale = Vector2(0.43255818, 0.45971563)
 texture = ExtResource("2_vc3wp")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=326131833]
+position = Vector2(1, -10)
